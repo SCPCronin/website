@@ -1,15 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route
+} from "react-router-dom"
+import Homepage from './pages/Homepage';
+import Portfolio from './pages/Portfolio';
+import Games from './pages/Games';
+import Writing from './pages/Writing';
+import Library from './pages/Library';
+
+const router = createBrowserRouter([
+  {
+    path: "/website",
+    element: <Homepage />
+  },
+  {
+    path: "/website/portfolio",
+    element: <Portfolio />
+  },
+  {
+    path: "/website/games",
+    element: <Games />
+  },
+  {
+    path: "/website/writing",
+    element: <Writing />
+  },
+  {
+    path: "/website/library",
+    element: <Library />
+  },
+])
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Homepage from '../pages/Homepage';
+import '@testing-library/jest-dom'
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  render(<Homepage />);
+  const linkElement = screen.getByText("Homepage");
   expect(linkElement).toBeInTheDocument();
 });
